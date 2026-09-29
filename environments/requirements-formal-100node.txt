@@ -1,0 +1,10 @@
+# Transcribed from the archived industrial-PC 100-node formal-run manifest.
+# Python 3.12.14 on Linux. This file has NOT been clean-install tested here.
+# Install the CPU PyTorch wheel separately from the official PyTorch CPU index:
+# python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.11.0+cpu
+numpy==2.0.1
+pandas==3.0.5
+scipy==1.18.1
+matplotlib==3.11.1
+scikit-learn==1.9.0
+psutil==7.2.2

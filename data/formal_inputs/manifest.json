@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "status": "metadata_only_redistribution_permission_pending",
+  "source": {
+    "provider": "Alibaba Cluster Trace Program",
+    "dataset": "cluster-trace-v2018 machine_usage.csv",
+    "official_documentation": "https://github.com/alibaba/clusterdata/blob/master/cluster-trace-v2018/trace_2018.md",
+    "official_schema": "https://github.com/alibaba/clusterdata/blob/master/cluster-trace-v2018/schema.txt",
+    "local_two_column_projection_sha256": "8e711553498b2b009d448bd2baea37074d993fe6bc5d6864c2470e01d60d0d86",
+    "official_archive_identity_confirmed": false
+  },
+  "preprocessing": {
+    "selected_rows": 100000,
+    "missing_value_handling": "linear interpolation in both directions",
+    "causal_moving_average_window": 5,
+    "processed_dtype": "float32",
+    "processed_array_sha256": "e8b9fd913bd0b9d09473e1456ff655bd3369e7b98d2709c2f2da17397f0c5e5b",
+    "chronological_split_rows": {"train": 70000, "validation": 15000, "test": 15000},
+    "input_slots": 100,
+    "forecast_slots": 5,
+    "model": "FITS-Delta seed 2026",
+    "model_checkpoint_included": false
+  },
+  "files": {
+    "value.csv": {
+      "sha256": "e2bf44333cd9c11cd15826f8a256c8928847e01ce72e82d900a54ddb281e845d",
+      "bytes": 157056,
+      "data_rows": 14896,
+      "header": false,
+      "columns": ["current_cpu_utilization_percent", "current_memory_utilization_percent"]
+    },
+    "cpu_predictions.csv": {
+      "sha256": "64388fb14c0a53274d1ff31ae7444087ea137c42fa214dc09448beea3c5e06b9",
+      "bytes": 794134,
+      "data_rows": 14896,
+      "header": true,
+      "columns": ["step_0", "step_1", "step_2", "step_3", "step_4", "step_5"],
+      "unit": "CPU utilization percent"
+    },
+    "memory_predictions.csv": {
+      "sha256": "920a65d6416b8fdf604d15ae1dfd147014566034560af9d6df5940d2aaa52a04",
+      "bytes": 772504,
+      "data_rows": 14896,
+      "header": true,
+      "columns": ["step_0", "step_1", "step_2", "step_3", "step_4", "step_5"],
+      "unit": "memory utilization percent"
+    }
+  },
+  "alignment": "All rows align by position; prediction step_0 equals the corresponding value.csv channel.",
+  "generator": "prediction_experiments/baseline_experiments/prepare_formal_prediction_bundle.py",
+  "verifier": "scripts/verify_formal_prediction_inputs.py"
+}

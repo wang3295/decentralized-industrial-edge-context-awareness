@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the associated manuscript; final bibliographic details will be added after publication."
+type: software
+title: "Code for Decentralized Adaptive Context Awareness for Industrial Edge Computing"
+authors:
+  - given-names: Yunzhong
+    family-names: Liu
+  - given-names: Xiaoya
+    family-names: Hu
+  - given-names: Siyu
+    family-names: Wang
+  - given-names: Yabin
+    family-names: Zhang
+  - given-names: Shouyue
+    family-names: Wang
+  - given-names: Zhenpeng
+    family-names: Hu

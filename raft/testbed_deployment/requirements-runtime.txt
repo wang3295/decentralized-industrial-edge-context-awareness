@@ -1,0 +1,10 @@
+numpy==2.0.1
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+psutil==7.2.2
+aiohttp==3.14.3
+PyYAML==6.0.3
+
+# PyTorch is installed separately so that the CPU-only wheel can be selected:
+# python -m pip install --index-url https://download.pytorch.org/whl/cpu torch==2.11.0
